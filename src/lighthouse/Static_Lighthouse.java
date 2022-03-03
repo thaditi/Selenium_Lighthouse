@@ -100,7 +100,7 @@ public class Static_Lighthouse {
 
     public void createBatFile() throws IOException {
         url = new FileWriter("url.bat");
-        String LHcmd="@For /F \"UseBackQ Delims=\" %%A In (\"urls.txt\") Do @LightHouse \"%%A\" --port="+portNumber+" --formFactor=desktop --screenEmulation.disabled --chrome-flags=\"--headless\" ";
+        String LHcmd="@For /F \"UseBackQ Delims=\" %%A In (\"urls.txt\") Do @LightHouse \"%%A\" --port="+portNumber+" --formFactor=desktop --quiet --chrome-flags=\"--headless --no-sandbox\" --screenEmulation.disabled";
         url.write(LHcmd);
         url.close();
 
